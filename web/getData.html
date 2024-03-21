@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #2a2a2a;
+        }
+        .main{
+            height: 80%;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 25%;
+            width: 100%;
+        }
+        img{
+            height: 100px;
+            margin-right: 30px;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 60%;
+    
+        }
+        .button{
+            width: 300px;
+            height: 100px;
+            border-radius: 20px;
+            background-color: #202020;
+            color: #f4f8f5;
+            font-size: 25px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 20px;
+            border: none;
+        }
+        h1{
+          font-size: 65px;
+          color: #f4f8f5;  
+        }
+        .getData{
+            margin-top: 50px;
+        }
+        .input{
+            height: 50px;
+            
+            padding-left: 10px;
+        }
+        h2{
+            width: 300px;
+            color: #f4f8f5;
+            align-items: flex-start;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script src="eel.js"></script>
+    <title>NeuroNexus</title>
+</head>
+<body>
+    <div class="main">
+        <form class="form">
+            <h2>ID</h2>
+            <input class="button input" id="id">
+            <h2>Name</h2>
+            <input class="button input nameinp" id="Name">
+            <button class="button" id="submite" onclick="data()" >Получить</button>
+        
+        </form>
+        <a href="index.html"><button class="button">Вернуться</button></a>
+    </div>
+    
+    
+    <script>
+        async function data(){
+            id = await document.getElementById("id").value
+            Name = await document.getElementById("Name").value
+            
+            let result = eel.getData(id,Name)();
+        }
+
+    </script>
+</body>
+</html>
